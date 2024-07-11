@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This repo tool manifest file is intended for use in conjunction with the Hammers Company cFS Training course. -->
+
+<manifest>
+    <remote name="origin" fetch="." />
+    <remote name="nasa-github"   fetch="https://github.com/nasa" />
+    <remote name="hammers-github"   fetch="https://github.com/hammerscompany" />
+    <!-- version 1.0.0-0.0.1 -->
+    <default revision="refs/tags/equulus-rc1" remote="origin" sync-j="4" />
+
+    <!-- cFS Root Directory and Contents -->
+    <!-- The NASA cFS repo includes several submodules that are not populated by this pull.
+         They are populated in other projects later. 
+    --> 
+    <project name="cFS"  remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="."   groups="cfs" />
+    <!-- <project name="training-cfs-root"  remote="hammers-github"  revision="refs/tags/course-1" clone-depth="1"  path="."   groups="cfs, training" /> -->
+
+    <!-- CFE and OSAL -->
+    <project name="cFE"  remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="cfe"   groups="cfs">
+        <copyfile src="cmake/sample_defs/arch_build_custom_native.cmake"  dest="trainingsat_defs/arch_build_custom_native.cmake" />
+        <copyfile src="cmake/sample_defs/arch_build_custom.cmake"         dest="trainingsat_defs/arch_build_custom.cmake"        />
+        <copyfile src="cmake/sample_defs/cpu1_cfe_es_startup.scr"         dest="trainingsat_defs/cpu1_cfe_es_startup.scr"        />
+        <copyfile src="cmake/sample_defs/default_osconfig.cmake"          dest="trainingsat_defs/default_osconfig.cmake"         />
+        <copyfile src="cmake/sample_defs/example_mission_cfg.h"           dest="trainingsat_defs/example_mission_cfg.h"          />
+        <copyfile src="cmake/sample_defs/example_platform_cfg.h"          dest="trainingsat_defs/example_platform_cfg.h"         />
+        <copyfile src="cmake/sample_defs/global_build_options.cmake"      dest="trainingsat_defs/global_build_options.cmake"     />
+        <copyfile src="cmake/sample_defs/mission_build_custom.cmake"      dest="trainingsat_defs/mission_build_custom.cmake"     />
+        <copyfile src="cmake/sample_defs/native_osconfig.cmake"           dest="trainingsat_defs/native_osconfig.cmake"          />
+        <copyfile src="cmake/sample_defs/sample_perfids.h"                dest="trainingsat_defs/sample_perfids.h"               />
+        <copyfile src="cmake/sample_defs/targets.cmake"                   dest="trainingsat_defs/targets.cmake"                  />
+        <copyfile src="cmake/sample_defs/toolchain-i686-linux-gnu.cmake"  dest="trainingsat_defs/toolchain-i686-linux-gnu.cmake" />
+    </project>
+    <project name="osal" remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="osal"  groups="cfs" />
+    <project name="PSP"  remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="psp"   groups="cfs" />
+    
+    <!-- cFS apps -->
+    <project name="CS" remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="apps/cs"  groups="cfs" />
+    <project name="FM" remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="apps/fm"  groups="cfs" />
+    <project name="HS" remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="apps/hs"  groups="cfs" />
+    <project name="DS" remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="apps/ds"  groups="cfs" />
+    <project name="SC" remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="apps/sc"  groups="cfs" />
+    <project name="LC" remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="apps/lc"  groups="cfs" />
+    <project name="HK" remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="apps/hk"  groups="cfs" />
+    <project name="MD" remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="apps/md"  groups="cfs" />
+    <project name="MM" remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="apps/mm"  groups="cfs" />
+    <project name="CF" remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="apps/cf"  groups="cfs" />
+    
+    <!-- cFS sample apps and libs -->
+    <project name="ci_lab"     remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="apps/ci_lab"      groups="cfs" />
+    <project name="to_lab"     remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="apps/to_lab"      groups="cfs" />
+    <project name="sch_lab"    remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="apps/sch_lab"     groups="cfs" />
+    <project name="sample_app" remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="apps/sample_app"  groups="cfs" />
+    <project name="sample_lib" remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="libs/sample_lib"  groups="cfs" />
+    
+    <!-- cFS libraries -->
+    <project name="cfs_lib" remote="nasa-github"  revision="refs/tags/2.2.0" clone-depth="1"  path="libs/cfs_lib"  groups="cfs" />
+    
+    <!-- cFS Tools -->
+    <project name="tblCRCTool"       remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="tools/tblCRCTool"        groups="cfs, tools" />
+    <project name="elf2cfetbl"       remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="tools/elf2cfetbl"        groups="cfs, tools" />
+    <project name="cFS-GroundSystem" remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="tools/cFS-GroundSystem"  groups="cfs, tools" />
+
+    <!-- Hammers-Developed Training Applications and libraries -->
+    <!-- <project name="training-sch"  remote="hammers-github"  revision="refs/tags/course-1" clone-depth="1"  path="apps/sch"  groups="cfs, training" /> -->
+    <!-- <project name="training-ci"   remote="hammers-github"  revision="refs/tags/course-1" clone-depth="1"  path="apps/ci"   groups="cfs, training" /> -->
+    <!-- <project name="training-to"   remote="hammers-github"  revision="refs/tags/course-1" clone-depth="1"  path="apps/to"   groups="cfs, training" /> -->
+    <!-- <project name="training-ic"   remote="hammers-github"  revision="refs/tags/course-1" clone-depth="1"  path="apps/ic"   groups="cfs, training" /> -->
+
+    <!-- vagrant provisioning files -->
+    <!-- <project name="training-vm"  remote="hammers-github"  revision="refs/tags/course-1" clone-depth="1"  path="vmprovision"   groups="cfs, training" /> -->
+
+</manifest>
