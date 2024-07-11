@@ -28,14 +28,15 @@ $ repo start develop --all
 
 ## Example
 
-Generate a build-able cFS directory structure from FSW project on bitbucket 
+Generate a build-able cFS directory structure from NASA's repos on github 
 ```bash
-# Navigate to a work directory
-$ cd Documents/projects/FSW/repos
-# Create a new working project directory
-$ mkdir FSW_Build
+# Navigate to a learning directory (we're assuming "lessons" has already been created for this example)
+$ cd ~/lessons
+# Create a new working project directory and navigate into it
+$ mkdir practice
+$ cd practice
 # grab the manifest from github and use the "main" branch
-$ repo init -u ssh://git@www.gihub.com:the-Hammers-Company/cfs-manifest.git -b main
+$ repo init -u https://github.com/the-Hammers-Company/cfs-manifest.git -b main
 # Fetch the git repositories from the manifeest
 $ repo sync
 ```
