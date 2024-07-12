@@ -5,7 +5,7 @@
 <manifest>
     <remote name="origin" fetch="." />
     <remote name="nasa-github"   fetch="https://github.com/nasa" />
-    <remote name="hammers-github"   fetch="https://github.com/hammerscompany" />
+    <remote name="hammers-github"   fetch="https://github.com/the-hammers-company" />
     <!-- version 1.0.0-0.0.1 -->
     <default revision="refs/tags/equulus-rc1" remote="origin" sync-j="4" />
 
@@ -69,6 +69,6 @@
     <!-- <project name="training-ic"   remote="hammers-github"  revision="refs/tags/course-1" clone-depth="1"  path="apps/ic"   groups="cfs, training" /> -->
 
     <!-- vagrant provisioning files -->
-    <!-- <project name="training-vm"  remote="hammers-github"  revision="refs/tags/course-1" clone-depth="1"  path="vmprovision"   groups="cfs, training" /> -->
+    <project name="vmprovision"  remote="hammers-github"  revision="refs/heads/main" clone-depth="1"  path="vmprovision"   groups="cfs, training" />
 
 </manifest>
