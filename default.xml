@@ -18,6 +18,7 @@
 
     <!-- CFE and OSAL -->
     <project name="cFE"  remote="nasa-github"  revision="refs/tags/equuleus-rc1" clone-depth="1"  path="cfe"   groups="cfs">
+        <copyfile src="cmake/Makefile.sample"                             dest="Makefile"                                        />
         <copyfile src="cmake/sample_defs/arch_build_custom_native.cmake"  dest="trainingsat_defs/arch_build_custom_native.cmake" />
         <copyfile src="cmake/sample_defs/arch_build_custom.cmake"         dest="trainingsat_defs/arch_build_custom.cmake"        />
         <copyfile src="cmake/sample_defs/cpu1_cfe_es_startup.scr"         dest="trainingsat_defs/cpu1_cfe_es_startup.scr"        />
@@ -27,7 +28,7 @@
         <copyfile src="cmake/sample_defs/global_build_options.cmake"      dest="trainingsat_defs/global_build_options.cmake"     />
         <copyfile src="cmake/sample_defs/mission_build_custom.cmake"      dest="trainingsat_defs/mission_build_custom.cmake"     />
         <copyfile src="cmake/sample_defs/native_osconfig.cmake"           dest="trainingsat_defs/native_osconfig.cmake"          />
-        <copyfile src="cmake/sample_defs/sample_perfids.h"                dest="trainingsat_defs/sample_perfids.h"               />
+        <copyfile src="cmake/sample_defs/sample_perfids.h"                dest="trainingsat_defs/trainingsat_perfids.h"          />
         <copyfile src="cmake/sample_defs/targets.cmake"                   dest="trainingsat_defs/targets.cmake"                  />
         <copyfile src="cmake/sample_defs/toolchain-i686-linux-gnu.cmake"  dest="trainingsat_defs/toolchain-i686-linux-gnu.cmake" />
     </project>
