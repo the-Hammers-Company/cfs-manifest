@@ -51,7 +51,7 @@
     <!-- cFS sample apps and libs -->
     <!-- These files are part of the initial build configuration -->
     <project name="ci_lab"     clone-depth="1"  path="apps/ci_lab"      groups="cfs" />
-    <project name="to_lab"     clone-depth="1"  path="apps/to_lab"      groups="cfs" />
+    <project name="to_lab"     remote="hammers-github"  clone-depth="1"  path="apps/to_lab"      groups="cfs" />
     <project name="sch_lab"    clone-depth="1"  path="apps/sch_lab"     groups="cfs" />
     <project name="sample_app" clone-depth="1"  path="apps/sample_app"  groups="cfs" />
     <project name="sample_lib" clone-depth="1"  path="libs/sample_lib"  groups="cfs" />
