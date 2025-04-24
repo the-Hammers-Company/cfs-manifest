@@ -7,7 +7,7 @@
     <remote name="nasa-github"   fetch="https://github.com/nasa" />
     <remote name="hammers-github"   fetch="https://github.com/the-hammers-company" />
     <!-- version 1.0.0-0.0.1 -->
-    <default revision="refs/tags/equuleus-rc1" remote="nasa-github" sync-j="4" />
+    <default revision="refs/tags/equuleus-rc1" remote="hammers-github" sync-j="4" />
 
     <!-- cFS Root Directory and Contents -->
     <!-- The NASA cFS repo includes several submodules that are not populated by this pull.
@@ -37,21 +37,21 @@
     
     <!-- cFS apps -->
     <!-- These apps are not built in the initial configuration, and are only here for reference -->
+    <project name="CF" clone-depth="1"  path="apps/cf"  groups="cfs" />
     <project name="CS" clone-depth="1"  path="apps/cs"  groups="cfs" />
-    <project name="FM" clone-depth="1"  path="apps/fm"  groups="cfs" />
-    <project name="HS" clone-depth="1"  path="apps/hs"  groups="cfs" />
     <project name="DS" clone-depth="1"  path="apps/ds"  groups="cfs" />
-    <project name="SC" clone-depth="1"  path="apps/sc"  groups="cfs" />
-    <project name="LC" clone-depth="1"  path="apps/lc"  groups="cfs" />
+    <project name="FM" clone-depth="1"  path="apps/fm"  groups="cfs" />
     <project name="HK" clone-depth="1"  path="apps/hk"  groups="cfs" />
+    <project name="HS" clone-depth="1"  path="apps/hs"  groups="cfs" />
+    <project name="LC" clone-depth="1"  path="apps/lc"  groups="cfs" />
     <project name="MD" clone-depth="1"  path="apps/md"  groups="cfs" />
     <project name="MM" clone-depth="1"  path="apps/mm"  groups="cfs" />
-    <project name="CF" clone-depth="1"  path="apps/cf"  groups="cfs" />
+    <project name="SC" clone-depth="1"  path="apps/sc"  groups="cfs" />
     
-    <!-- cFS sample apps and libs -->
+    <!-- cFS sample/lab apps and libs -->
     <!-- These files are part of the initial build configuration -->
     <project name="ci_lab"     clone-depth="1"  path="apps/ci_lab"      groups="cfs" />
-    <project name="to_lab"     remote="hammers-github"  clone-depth="1"  path="apps/to_lab"      groups="cfs" />
+    <project name="to_lab"     clone-depth="1"  path="apps/to_lab"      groups="cfs" />
     <project name="sch_lab"    clone-depth="1"  path="apps/sch_lab"     groups="cfs" />
     <project name="sample_app" clone-depth="1"  path="apps/sample_app"  groups="cfs" />
     <project name="sample_lib" clone-depth="1"  path="libs/sample_lib"  groups="cfs" />
@@ -71,6 +71,6 @@
     <!-- <project name="training-ic"   remote="hammers-github"  revision="refs/tags/course-1" clone-depth="1"  path="apps/ic"   groups="cfs, training" /> -->
 
     <!-- vagrant provisioning files (note explicit remote and revision branch) -->
-    <project name="vmprovision"  remote="hammers-github"  revision="refs/heads/main" clone-depth="1"  path="vmprovision"   groups="cfs, training" />
+    <project name="vmprovision"  revision="refs/heads/main" clone-depth="1"  path="vmprovision"   groups="cfs, training" />
 
 </manifest>
